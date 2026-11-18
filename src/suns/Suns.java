@@ -50,8 +50,8 @@ public class Suns {
 	public void mainitSaimnieku (String jaunsSaimnieks) {
 		this.saimnieks = jaunsSaimnieks;
 	}
-	void mainitVecumu () {
-		if(vecums > 0) {
+	void palielinatVecumu () {
+		if(vecums < 20) {
 			vecums++;
 		JOptionPane.showMessageDialog(null, vards + 
 				" vecums palielināts par vienu gadu!",
@@ -63,15 +63,18 @@ public class Suns {
 	}
 	
 	void nolaitVecumu() {
-		JOptionPane.showMessageDialog(null, vards + " ir " + vecums
-				+ " gadus vecs.", "Informācija", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null,
+				vards + " ir " + vecums
+				+ " gadus vecs.", "Informācija",
+				JOptionPane.INFORMATION_MESSAGE);
 	}
+	
 	
 	String pabarot(String ediens) {
 		if (izsalkums > 0) {
 			JOptionPane.showMessageDialog(null, "Namm ņamm ņammmm, man garšo "+ ediens,
-					"Informācija", JOptionPane.INFORMATION_MESSAGE);
-			ediens = "Tukša bļodiņa";
+					"Informācija",
+					JOptionPane.INFORMATION_MESSAGE);
 			izsalkums--;
 			
 		} else {
@@ -105,7 +108,7 @@ public class Suns {
 	  	}	
 	 void riet() {
 		 try {
-			 File audioFile = new File("riet.wav");
+			 File audioFile = new File("riet/riet.wav");
 		 
 		 AudioInputStream audioStream = AudioSystem.getAudioInputStream(audioFile);
          Clip clip = AudioSystem.getClip();
